@@ -1,0 +1,17 @@
+* {
+    font-family: Arial;
+}
+h2 {
+    border-style: dashed;
+    border-color: blue;
+}
+#kedua {
+    font-weight: bold;
+    color: #99349C;
+}
+.ketiga {
+    border-style: solid;
+    border-color: chocolate;
+    background: dimgray;
+    color: white;
+}

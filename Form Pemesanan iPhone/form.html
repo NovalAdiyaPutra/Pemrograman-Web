@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan iPhone</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Apel Store</h1>
+        <h2>Form Pembelian iPhone</h2>
+        
+        <!-- Tambahkan gambar iPhone -->
+        <img id="iphonetampil" src="iphonedefault.jpg" alt="Gambar iPhone" width="200">
+
+        <form action="proses_pemesanan.php" method="post">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" placeholder="Masukkan Nama" required><br />
+
+            <label>Jenis Kelamin:</label>
+            <div class="radio-group">
+                <input type="radio" name="jk" value="L" checked> Laki-laki
+                <input type="radio" name="jk" value="P"> Perempuan <br />
+            </div>
+
+            <label for="tanggal">Tanggal Pemesanan:</label>
+            <input type="date" id="tanggal" required><br />
+
+            <label for="alamat">Alamat:</label>
+            <input type="text" id="alamat" placeholder="Masukkan Alamat"><br />
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Masukkan Email"><br /> 
+
+            <label for="model">Model iPhone:</label>
+            <select id="model">
+                <option value="">-- Pilih Model --</option>
+                <option value="iPhone 13">iPhone 13</option>
+                <option value="iPhone 14">iPhone 14</option>
+                <option value="iPhone 15">iPhone 15</option>
+            </select>
+
+            <label for="warna">Warna:</label>
+            <select id="warna">
+                <option value="">-- Pilih Warna --</option>
+                <option value="Hitam">Hitam</option>
+                <option value="Pink">Pink</option>
+                <option value="Biru">Biru</option>
+            </select>
+
+            <img id="iphoneImage" src="iphone.png" alt="Gambar iPhone" width="200">
+
+            <label for="jumlah">Jumlah:</label>
+            <input type="number" id="jumlah" value="1" min="1" max="10" required><br />
+
+            <label for="harga">Harga:</label>
+            <input type="text" id="harga" readonly><br />
+
+            <label for="total">Total Harga:</label>
+            <input type="text" id="total" readonly><br />
+
+            <button type="button" id="hitung">Hitung Total</button><br />
+
+            <label for="pembayaran">Metode Pembayaran:</label>
+            <select id="pembayaran" name="pembayaran" required>
+                <option value="">-- Pilih Pembayaran --</option>
+                <option value="Transfer Bank">Transfer Bank</option>
+                <option value="E-Wallet">E-Wallet</option>
+                <option value="Kartu Kredit">Kartu Kredit</option>
+                <option value="COD">Bayar di Tempat (COD)</option>
+            </select>
+        
+            <label for="pengiriman">Metode Pengiriman:</label>
+            <select id="pengiriman" name="pengiriman" required>
+                <option value="">-- Pilih Kurir --</option>
+                <option value="JNE">JNE</option>
+                <option value="J&T">J&T</option>
+                <option value="SiCepat">SiCepat</option>
+            </select>
+
+            <label class="checkbox">
+                <input type="checkbox" id="persetujuan" required> 
+                Saya menyetujui semua ketentuan<br />
+            </label>
+            
+            <button type="submit" id="pesan" disabled>Pesan</button>
+            <button type="reset">Batal</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

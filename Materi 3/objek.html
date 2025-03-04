@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objek</title>
+
+</head>
+<body>
+    <h1>Data User</h1>
+    <p id="output"></p>
+
+    <script>
+        let user = {
+            firstName: "Harry",
+            lastName: "Potter",
+            age: 20,
+            isMuggle: false,
+            stuff: ["Magic Wind", "Owl", "Flying Car"]
+        };
+
+        // Menampilkan data ke dalam elemen dengan id "output"
+        document.getElementById("output").innerHTML = "Hallo, nama saya " + user.firstName + " " + user.lastName + ". Umur saya " + user.age + " tahun." +"<br>Barang saya: " + user.stuff.join(", ");
+    </script>
+</body>
+</html>

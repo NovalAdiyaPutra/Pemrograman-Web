@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <script> // script untuk buat function
+        function hitung(){
+            const pj = document.querySelector("#panjang").value; //const tidak berubah
+            const lb = document.getElementById("lebar").value; 
+            let kel = 2* (parseInt(pj) + parseInt(lb)); //let bisa berubah
+            alert("keliling adalah: "+kel);
+        }
+    </script>
+</head>
+<body>
+    <h1>Kalkulator Luas Persegi Panjang</h1><br>
+    Panjang : <input type="number" id="panjang"><br>
+    Lebar : <input type="number" id="lebar"><br>
+        <button onClick="hitung()" > Calculate</button>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form HTML</title>
+</head>
+<body>
+    <h2>Form Pemesanan Tiket Kereta Api</h2>
+    <form action="proses_pemesanan.php" method="POST">
+        <label>Nama:</label>
+        <input type="text" name="nama" size="30" placeholder="Masukkan Nama Sesuai KTP" /><br />
+        
+        <label>Tanggal Berangkat:</label>
+        <input type="date" name="tanggal" /><br />
+
+        <label>Jenis Kelamin:</label>
+        <input type="radio" name="jk" value="L" checked /> Laki-laki
+        <input type="radio" name="jk" value="P" /> Perempuan<br />
+
+        <label>Jenis Kursi:</label>
+        <select name="jenis_kursi">
+            <option value="Ekonomi" selected>Ekonomi</option>
+            <option value="Bisnis">Bisnis</option>
+            <option value="Eksekutif">Eksekutif</option>
+            <option value="Premium">Premium</option>
+        </select><br />
+        
+        <label>Harga</label>
+        <input type="text" name="harga" size="10" readonly /><br />
+        
+        <label>Jumlah Penumpang</label>
+        <input type="number" name="jumlah_penumpang" value="0" min="0" max="10" /><br />
+        
+        <label>Total Harga:</label>
+        <input type="text" name="total" size="12" readonly />
+        <input type="button" id="hitung" value="Hitung Total Harga"><br />
+        
+        <input type="checkbox" name="persetujuan" /> Saya menyatakan setuju dengan semua ketentuan yang berlaku<br />
+        
+        <input type="submit" name="submit" value="Pesan" />
+        <input type="reset" name="batal" value="Batal" />
+        
+    </form>
+</body>
+</html>

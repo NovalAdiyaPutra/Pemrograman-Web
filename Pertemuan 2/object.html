@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+    <script src="./web.js"></script>
+
+</head>
+<body>
+    Nama : <span id="nama"></span><br>
+    Nim : <span id="nim"></span><br>
+    Orang Tua: <br>
+    Ayah : <span id="ayah"></span><br>
+    Ibu : <span id="ibu"></span><br>
+    Hobi : <span id="hobi"></span><br>
+
+    <script>
+        document.getElementById("nama").innerHTML = mhs.nama;
+        document.getElementById("nim").innerHTML = mhs.nim;
+        document.getElementById("ayah").innerHTML = mhs.ortu.ayah;
+        document.getElementById("ibu").innerHTML = mhs.ortu.ibu;
+        let data = "";
+        mhs.hobi.forEach((element) => {
+            console.log(element);
+            data = data + " " +element + ",";
+        });
+        document.getElementById("hobi").innerHTML = mhs.hobi;
+    </script>
+</body>
+</html>

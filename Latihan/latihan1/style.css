@@ -1,0 +1,12 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h2 {
+    background-color: aqua;
+}
+#ul_satu {
+    border-style: dashed;
+}
+.warna_custom {
+    color: #FF0456;
+}

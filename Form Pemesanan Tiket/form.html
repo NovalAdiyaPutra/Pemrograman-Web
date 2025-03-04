@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan Tiket</title>
+</head>
+<body>
+    <h2>Form Pemesanan Tiket Kereta Api</h2>
+    <form action="proses_pemesanan.php" method="post">
+        <label>Nama:</label>
+        <input type="text" name="nama" size="30" placeholder="Masukan Nama Sesuai KTP" /><br />
+
+        <label>Tanggal Berangkat:</label>
+        <input type="date" name="tanggal" /><br />
+
+        <label>Jenis Kelamin:</label>
+        <input type="radio" name="jk" value="L" checked /> Laki-laki
+        <input type="radio" name="jk" value="P" /> Perempuan<br />
+
+        <label>Jenis Kursi:</label>
+        <select name="jenis_kursi" id="kursi"></select><br />
+
+        <label>Harga</label>
+        <input type="text" name="harga" size="10" id="harga" readonly /><br />
+
+        <label>Jumlah Penumpang</label>
+        <input type="number" name="jumlah_penumpang" value="0" min="0" max="10" id="penumpang" /><br />
+
+        <label>Total Harga:</label>
+        <input type="text" name="total" size="12" id="total" readonly />
+        <input type="button" id="hitung" value="Hitung Total Harga"><br />
+
+        <input type="checkbox" name="persetujuan" id="persetujuan" />
+        Saya menyatakan setuju dengan semua ketentuan yang berlaku<br />
+        
+        <input type="submit" name="submit" id="pesan" value="Pesan" />
+        <input type="reset" name="batal" value="Batal" />
+    </form>
+
+    <script>
+        const dataKursi = {"Ekonomi":50000,"Bisnis":100000,"Eksekutif":150000,"Premium":200000};
+        //Mengisi Elemen Select ID kursi dengan data dari Array Object
+        const cmbKursi = document.querySelector("#kursi");
+        for (const key in dataKursi){
+            const opt = document.createElement("option");
+            opt.text = key;
+            opt.value = key; //<option value="opt.valuey">opt.text</option>
+            cmbKursi.add(opt);
+        }
+
+        //Memberikan aksi agar harga terisi sesuai jenis kursi yang dipilih
+        const txtHarga = document.querySelector("#harga");
+        txtHarga.value = dataKursi[cmbKursi.options[0].value]; //Inisialisasi Harga
+        let tempHarga = dataKursi["Ekonomi"]; //Inisialisasi temporary harga
+        cmbKursi.addEventListener('change', function (event) { //Ketika kursi diubah
+            const key = cmbKursi.options[cmbKursi.selectedIndex].value;
+            txtHarga.value = dataKursi[key];
+            tempHarga = dataKursi[key];
+        });
+
+        //Menghitung Total Harga
+        const txtTotalHarga = document.querySelector("#total");
+        txtTotalHarga.value = 0; //Inisialisasi text total harga
+        const btnHitung = document.querySelector("#hitung");
+        btnHitung.addEventListener('click', function (event) { //Ketika Button Hitung di klik
+            const txtPenumpang = document.querySelector("#penumpang");
+            console.log(txtPenumpang.value+" "+tempHarga);
+            let total = tempHarga * txtPenumpang.value;
+            txtTotalHarga.value = total;
+        });
+
+        //Tombol ”Pesan” akan aktif juka checkbox persetujuan di ceklis dan sebaliknya
+        const btnPesan = document.querySelector("#pesan");
+        btnPesan.disabled = true; //Kondisi Button Pesan di awal disable
+        const cekSetuju = document.querySelector("#persetujuan");
+        cekSetuju.addEventListener("click", function (event) { //Ketika Checkbox Persetujuan di klik
+            if(cekSetuju.checked === true){
+                btnPesan.disabled = false;
+            }else{
+                btnPesan.disabled = true;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulasi Atribut Elemen</title>
+</head>
+<body>
+    <img id="progImg" src="./images/programmer.jpg" alt="Programming" width="300px" /><br />
+    <button id="btnChange">Ubah Gambar</button>
+
+    <script>
+        const tombol = document.querySelector("#btnChange");
+        let gambar = document.querySelector("#progImg");
+        tombol.addEventListener('click', function(events){
+            gambar.setAttribute("src","./image/cicd.png");
+        });
+    </script>
+</body>
+</html>
