@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            padding: 15px;
+        }
+
+        nav {
+            background-color: #555;
+            color: white;
+            padding: 10px;
+        }
+
+        /* Tata letak main */
+        main {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Bagian artikel */
+        #content {
+            color: blue;
+            flex: 2;
+        }
+
+        article {
+            background-color: lightgray;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        /* Bagian aside */
+        aside {
+            background-color: yellow;
+            padding: 15px;
+            flex: 1;
+            border-radius: 5px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>ini header 
+        <nav>ini navbar</nav> 
+    </header>
+    <main>
+        <div id="content">
+            <article>ini adalah artikel 1</article>
+            <article>ini adalah artikel 2</article>
+        </div>
+        <aside>ini adalah aside</aside>
+    </main>
+    <footer>ini adalah footer</footer>
+</body>
+</html>
